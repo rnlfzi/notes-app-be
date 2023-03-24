@@ -17,7 +17,7 @@ const addNoteHandler = (req, h) => {
     const isSuccess = notes.filter((note) => note.id === id).length > 0;
 
     if (isSuccess) {
-        const res = h.res({
+        const res = h.response({
             status: 'success',
             message: 'Catatan berhasil ditambahkan',
             data: {
@@ -28,7 +28,7 @@ const addNoteHandler = (req, h) => {
         return res;
     }
 
-    const res = h.res({
+    const res = h.response({
         status: 'fail',
         message: 'Catatan gagal ditambahkan'
     });
